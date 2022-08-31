@@ -1,0 +1,8 @@
+{
+  "@@locale": "en",
+  "appTitle": "EUNICE HONG",
+  "@appTitle": {
+    "description": "App title"
+  },
+  "showCompanyTitle": "Turn on the switch to see the name of this App!"
+}

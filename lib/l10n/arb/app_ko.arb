@@ -1,0 +1,8 @@
+{
+    "@@locale": "ko",
+    "appTitle": "Eunice Hong",
+    "@appTitle": {
+        "description": "앱 제목"
+    },
+    "showCompanyTitle": "앱 이름을 보려면 스위치를 누르세요!"
+}
