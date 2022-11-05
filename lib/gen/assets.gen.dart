@@ -1,8 +1,16 @@
 /// GENERATED CODE - DO NOT MODIFY BY HAND
 /// *****************************************************
 ///  FlutterGen
-/// *****************************************************bleGen get drawable => const $AssetsImagesDrawableGen();
-$AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();}
+/// *****************************************************
+import 'package:flutter/widgets.dart';
+
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  $AssetsImagesDrawableGen get drawable => const $AssetsImagesDrawableGen();
+
+  $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
+}
 
 class $AssetsImagesDrawableGen {
   const $AssetsImagesDrawableGen();

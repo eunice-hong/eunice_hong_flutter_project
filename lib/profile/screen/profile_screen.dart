@@ -6,6 +6,7 @@ import 'package:eunice_ui/ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -65,17 +66,23 @@ class Child extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () => _openLink(
+                    'https://www.instagram.com/dev.driven.eunice',
+                  ),
                   icon: Assets.images.icons.instagram.image(
                     color: AppColors.seaSerpent,
                   ),
+                  color: AppColors.seaSerpent,
                   iconSize: 32,
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () => _openLink(
+                    'https://github.com/eunice-hong',
+                  ),
                   icon: Assets.images.icons.github.image(
                     color: AppColors.seaSerpent,
                   ),
+                  color: AppColors.seaSerpent,
                   iconSize: 32,
                 ),
                 IconButton(
@@ -83,10 +90,13 @@ class Child extends StatelessWidget {
                   icon: Assets.images.icons.linkedin.image(
                     color: AppColors.seaSerpent,
                   ),
+                  color: AppColors.seaSerpent,
                   iconSize: 32,
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () => _openLink(
+                    'https://eunice-hong.com/',
+                  ),
                   icon: const Icon(
                     Icons.link_outlined,
                     color: AppColors.seaSerpent,
@@ -99,5 +109,14 @@ class Child extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _openLink(String url) async {
+    final uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
