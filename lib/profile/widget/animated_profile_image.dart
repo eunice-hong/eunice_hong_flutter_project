@@ -43,7 +43,16 @@ class AnimatedProfileImageState extends State<AnimatedProfileImage>
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      decoration: const BoxDecoration(
+        shape: BoxShape.circle,
+        boxShadow: [
+          BoxShadow(
+            color: Color(0xFFE0D9F6),
+            blurRadius: 100,
+          ),
+        ],
+      ),
       width: 500,
       height: 500,
       child: Stack(
