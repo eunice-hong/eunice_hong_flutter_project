@@ -1,7 +1,6 @@
 part of 'theme.dart';
 
 const _fontPackage = 'ui';
-const _primaryFontFamily = FontFamily.notoSans;
 
 /// Different [TextStyle] used in the app
 abstract class AppTextStyle {
@@ -9,7 +8,6 @@ abstract class AppTextStyle {
   static const headline1 = TextStyle(
     fontSize: 28,
     package: _fontPackage,
-    fontFamily: _primaryFontFamily,
     color: AppColors.black,
   );
 
@@ -17,7 +15,6 @@ abstract class AppTextStyle {
   static const headline2 = TextStyle(
     fontSize: 24,
     package: _fontPackage,
-    fontFamily: _primaryFontFamily,
     color: AppColors.black,
   );
 
@@ -26,7 +23,6 @@ abstract class AppTextStyle {
     color: AppColors.independence,
     fontSize: 20,
     package: _fontPackage,
-    fontFamily: _primaryFontFamily,
     fontWeight: FontWeight.bold,
   );
 
@@ -35,7 +31,6 @@ abstract class AppTextStyle {
     color: AppColors.black,
     fontSize: 16,
     package: _fontPackage,
-    fontFamily: _primaryFontFamily,
   );
 
   /// Font size: 214| Color: white
@@ -43,14 +38,12 @@ abstract class AppTextStyle {
     color: AppColors.black,
     fontSize: 14,
     package: _fontPackage,
-    fontFamily: _primaryFontFamily,
   );
 
   /// Font size: 12 | Color: white
   static const subtitle1 = TextStyle(
     fontSize: 12,
     package: _fontPackage,
-    fontFamily: _primaryFontFamily,
     color: AppColors.yellow,
   );
 }

@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_fonts: ^3.0.1
 
 dev_dependencies:
   build_runner: ^2.2.0
@@ -23,12 +24,6 @@ flutter:
   generate: true
   assets:
     - assets/images/
-  fonts:
-    - family: NotoSans
-      fonts:
-        - asset: assets/fonts/NotoSans-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/NotoSans-Medium.ttf
 
 flutter_gen:
   line_length: 80
