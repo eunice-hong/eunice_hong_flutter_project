@@ -1,4 +1,5 @@
 import 'package:eunice_template/gen/assets.gen.dart';
+import 'package:eunice_template/l10n/l10n.dart';
 import 'package:eunice_ui/ui.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -33,8 +34,9 @@ class ProfileButtonContainer extends StatelessWidget {
           ),
         ),
         ProfileButton(
-          onPressed: () {},
-          icon: Assets.images.icons.linkedin.image(
+          onPressed: () => _openMailApp(context),
+          icon: const Icon(
+            Icons.mail_outline_outlined,
             color: AppColors.seaSerpent,
           ),
         ),
@@ -58,5 +60,25 @@ class ProfileButtonContainer extends StatelessWidget {
     } else {
       throw 'Could not launch $url';
     }
+  }
+
+  Future<void> _openMailApp(BuildContext context) async {
+    final emailLaunchUri = Uri(
+      scheme: 'mailto',
+      path: 'contact@eunice-hong.com',
+      query: encodeQueryParameters(<String, String>{
+        context.l10n.profileMailSubjectKey:
+            context.l10n.profileMailSubjectValue,
+        context.l10n.profileMailBodyKey: context.l10n.profileMailBodyValue,
+      }),
+    );
+    await launchUrl(emailLaunchUri);
+  }
+
+  String? encodeQueryParameters(Map<String, String> params) {
+    return params.entries
+        .map((MapEntry<String, String> e) =>
+            '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+        .join('&');
   }
 }
