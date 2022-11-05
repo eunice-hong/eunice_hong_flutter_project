@@ -1,8 +1,7 @@
 import 'package:eunice_repository/repository.dart';
-import 'package:eunice_template/l10n/l10n.dart';
 import 'package:eunice_template/profile/bloc/cubit/profile_cubit.dart';
+import 'package:eunice_template/profile/widget/animated_background.dart';
 import 'package:eunice_template/profile/widget/profile_content.dart';
-import 'package:eunice_ui/ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -17,12 +16,23 @@ class ProfileScreen extends StatelessWidget {
         profileRepository: GetIt.I<ProfileRepository>(),
       ),
       child: Scaffold(
-        appBar: AppBar(
-          title: Text(context.l10n.appTitle),
-          backgroundColor: AppColors.transparent,
-        ),
-        body: const Center(
-          child: ProfileContent(),
+        body: Stack(
+          children: const [
+            Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: AnimatedBackground(),
+            ),
+            Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: ProfileContent(),
+            )
+          ],
         ),
       ),
     );
