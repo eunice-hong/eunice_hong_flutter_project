@@ -22,7 +22,7 @@ class ProfileButtonContainer extends StatelessWidget {
             'https://www.instagram.com/dev.driven.eunice',
           ),
           icon: Assets.images.icons.instagram.image(
-            color: AppColors.seaSerpent,
+            color: AppColors.white,
           ),
         ),
         ProfileButton(
@@ -30,14 +30,14 @@ class ProfileButtonContainer extends StatelessWidget {
             'https://github.com/eunice-hong',
           ),
           icon: Assets.images.icons.github.image(
-            color: AppColors.seaSerpent,
+            color: AppColors.white,
           ),
         ),
         ProfileButton(
           onPressed: () => _openMailApp(context),
           icon: const Icon(
             Icons.mail_outline_outlined,
-            color: AppColors.seaSerpent,
+            color: AppColors.white,
           ),
         ),
         ProfileButton(
@@ -46,7 +46,7 @@ class ProfileButtonContainer extends StatelessWidget {
           ),
           icon: const Icon(
             Icons.link_outlined,
-            color: AppColors.seaSerpent,
+            color: AppColors.white,
           ),
         ),
       ],

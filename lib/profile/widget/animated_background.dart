@@ -27,7 +27,7 @@ class AnimatedBackgroundState extends State<AnimatedBackground> {
   Color toColor = colorList[1];
 
   Alignment start = alignmentList[0];
-  Alignment end = alignmentList[4];
+  Alignment end = alignmentList[3];
 
   @override
   void initState() {
