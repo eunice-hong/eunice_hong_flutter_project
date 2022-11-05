@@ -1,6 +1,6 @@
-import 'package:eunice_template/gen/assets.gen.dart';
 import 'package:eunice_template/l10n/l10n.dart';
 import 'package:eunice_template/profile/bloc/cubit/profile_cubit.dart';
+import 'package:eunice_template/profile/widget/animated_profile_image.dart';
 import 'package:eunice_template/profile/widget/profile_button_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,13 +27,7 @@ class ProfileContent extends StatelessWidget {
             onPressed: () async {
               await context.read<ProfileCubit>().setProfile(isOn: !isToggleOn);
             },
-            icon: ClipRRect(
-              borderRadius: BorderRadius.circular(100),
-              child: Assets.images.drawable.projectLogo.image(
-                width: 200,
-                height: 200,
-              ),
-            ),
+            icon: const AnimatedProfileImage(),
           ),
           const SizedBox(height: 8),
           Text(
