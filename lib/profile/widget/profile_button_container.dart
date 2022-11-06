@@ -1,8 +1,10 @@
 import 'package:eunice_template/gen/assets.gen.dart';
 import 'package:eunice_template/l10n/l10n.dart';
 import 'package:eunice_ui/ui.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 part 'profile_button.dart';
@@ -57,6 +59,12 @@ class ProfileButtonContainer extends StatelessWidget {
     final uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);
+      await GetIt.I.get<FirebaseAnalytics>().logEvent(
+        name: 'open_link',
+        parameters: {
+          'url': url,
+        },
+      );
     } else {
       throw 'Could not launch $url';
     }
@@ -73,6 +81,12 @@ class ProfileButtonContainer extends StatelessWidget {
       }),
     );
     await launchUrl(emailLaunchUri);
+    await GetIt.I.get<FirebaseAnalytics>().logEvent(
+      name: 'open_link',
+      parameters: {
+        'url': emailLaunchUri.path,
+      },
+    );
   }
 
   String? encodeQueryParameters(Map<String, String> params) {
