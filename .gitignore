@@ -126,3 +126,8 @@ app.*.map.json
 !.idea/runConfigurations/
 
 /assets/env/
+
+# Firebase settings
+**/android/**/google-services.json
+**/ios/**/GoogleService-Info.plist
+**/ios/**/firebase_app_id_file.json
