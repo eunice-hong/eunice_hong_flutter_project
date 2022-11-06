@@ -21,9 +21,12 @@ dependencies:
     path: packages/ui
   eunice_usecase:
     path: packages/domain/usecase
+  firebase_core: ^2.1.1
+  firebase_crashlytics: ^3.0.4
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.1
+  flutter_dotenv: ^5.0.2
   flutter_localizations:
     sdk: flutter
   get_it: ^7.2.0
@@ -45,3 +48,4 @@ flutter:
   assets:
     - assets/images/drawable/
     - assets/images/icons/
+    - assets/env/

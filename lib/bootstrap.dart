@@ -1,16 +1,15 @@
-// Copyright (c) 2022, Very Good Ventures
-// https://verygood.ventures
-//
-// Use of this source code is governed by an MIT-style
-// license that can be found in the LICENSE file or at
-// https://opensource.org/licenses/MIT.
-
 import 'dart:async';
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:eunice_template/app/di/app_injection.dart';
+import 'package:eunice_template/firebase_options.dart';
+import 'package:eunice_template/gen/assets.gen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
 
 class AppBlocObserver extends BlocObserver {
@@ -28,17 +27,30 @@ class AppBlocObserver extends BlocObserver {
 }
 
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
-  FlutterError.onError = (details) {
-    log(details.exceptionAsString(), stackTrace: details.stack);
-  };
-  WidgetsFlutterBinding.ensureInitialized();
-
-  await GetIt.I.init();
-
-  Bloc.observer = AppBlocObserver();
-
   await runZonedGuarded(
-    () async => runApp(await builder()),
-    (error, stackTrace) => log(error.toString(), stackTrace: stackTrace),
+    () async {
+      WidgetsFlutterBinding.ensureInitialized();
+
+      if (kDebugMode) {
+        await dotenv.load(fileName: Assets.env.debug);
+      } else {
+        await dotenv.load(fileName: Assets.env.release);
+      }
+
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+
+      FlutterError.onError =
+          FirebaseCrashlytics.instance.recordFlutterFatalError;
+
+      await GetIt.I.init();
+
+      Bloc.observer = AppBlocObserver();
+
+      runApp(await builder());
+    },
+    (error, stack) =>
+        FirebaseCrashlytics.instance.recordError(error, stack, fatal: true),
   );
 }

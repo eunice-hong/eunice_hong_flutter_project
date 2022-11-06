@@ -4,6 +4,16 @@
 /// *****************************************************
 import 'package:flutter/widgets.dart';
 
+class $AssetsEnvGen {
+  const $AssetsEnvGen();
+
+  /// File path: assets/env/debug.dev
+  String get debug => 'assets/env/debug.dev';
+
+  /// File path: assets/env/release.dev
+  String get release => 'assets/env/release.dev';
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -39,6 +49,7 @@ class $AssetsImagesIconsGen {
 class Assets {
   Assets._();
 
+  static const $AssetsEnvGen env = $AssetsEnvGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
