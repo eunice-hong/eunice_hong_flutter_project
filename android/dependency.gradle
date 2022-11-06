@@ -11,6 +11,7 @@ ext {
                     target : 33,
                     compile: 33,
             ],
+            ndk      : "23.1.7779620",
     ]
     deps = [
             classpath: [
