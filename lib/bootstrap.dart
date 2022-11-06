@@ -31,10 +31,14 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
     () async {
       WidgetsFlutterBinding.ensureInitialized();
 
-      if (kDebugMode) {
-        await dotenv.load(fileName: Assets.env.debug);
-      } else {
-        await dotenv.load(fileName: Assets.env.release);
+      try {
+        if (kDebugMode) {
+          await dotenv.load(fileName: Assets.env.debug);
+        } else {
+          await dotenv.load(fileName: Assets.env.release);
+        }
+      } catch (e) {
+        // ignore env file not found error
       }
 
       await Firebase.initializeApp(
