@@ -2,8 +2,8 @@ ext {
     versions = [
             classpath: [
                     build_gradle: "7.3.0",
-                    google      : "4.3.10",
-                    crashlytics : "2.8.1",
+                    google      : "4.3.14",
+                    crashlytics : "2.9.2",
             ],
             kotlin   : "1.6.21",
             sdk      : [
