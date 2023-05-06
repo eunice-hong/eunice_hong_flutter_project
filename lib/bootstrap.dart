@@ -7,7 +7,6 @@ import 'package:eunice_template/firebase_options.dart';
 import 'package:eunice_template/util/env/environmental_variable_util.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
 
