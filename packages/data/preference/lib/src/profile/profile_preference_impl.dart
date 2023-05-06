@@ -9,8 +9,7 @@ class ProfilePreferenceImpl extends ProfilePreference {
 
   ProfilePreferenceImpl(
     SharedPreferences prefs,
-  )   : assert(prefs != null),
-        _prefs = prefs;
+  )   : _prefs = prefs;
 
   final SharedPreferences _prefs;
 
