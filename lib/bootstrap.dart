@@ -4,12 +4,11 @@ import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:eunice_template/app/di/app_injection.dart';
 import 'package:eunice_template/firebase_options.dart';
-import 'package:eunice_template/gen/assets.gen.dart';
+import 'package:eunice_template/util/env/environmental_variable_util.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
 
 class AppBlocObserver extends BlocObserver {
@@ -31,15 +30,7 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
     () async {
       WidgetsFlutterBinding.ensureInitialized();
 
-      try {
-        if (kDebugMode) {
-          await dotenv.load(fileName: Assets.env.debug);
-        } else {
-          await dotenv.load(fileName: Assets.env.release);
-        }
-      } catch (e) {
-        // ignore env file not found error
-      }
+      await setUpEnvironmentVariable();
 
       await Firebase.initializeApp(
         options: DefaultFirebaseOptions.currentPlatform,

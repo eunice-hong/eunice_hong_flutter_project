@@ -2,23 +2,30 @@
 /// *****************************************************
 ///  FlutterGen
 /// *****************************************************
+
+// coverage:ignore-file
+// ignore_for_file: type=lint
+// ignore_for_file: directives_ordering,unnecessary_import
+
 import 'package:flutter/widgets.dart';
 
 class $AssetsEnvGen {
   const $AssetsEnvGen();
 
-  /// File path: assets/env/debug.dev
-  String get debug => 'assets/env/debug.dev';
+  /// File path: assets/env/.env
+  String get env => 'assets/env/.env';
 
-  /// File path: assets/env/release.dev
-  String get release => 'assets/env/release.dev';
+  /// File path: assets/env/debug.env
+  String get debug => 'assets/env/debug.env';
+
+  /// File path: assets/env/release.env
+  String get release => 'assets/env/release.env';
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
   $AssetsImagesDrawableGen get drawable => const $AssetsImagesDrawableGen();
-
   $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
 }
 

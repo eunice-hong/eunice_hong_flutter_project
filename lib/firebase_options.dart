@@ -37,33 +37,56 @@ class DefaultFirebaseOptions {
   }
 
   static final FirebaseOptions web = FirebaseOptions(
-    apiKey: dotenv.env['WEB_API_KEY'] ?? '',
-    appId: dotenv.env['WEB_APP_ID'] ?? '',
-    messagingSenderId: dotenv.env['WEB_MESSAGING_SENDER_ID'] ?? '',
-    projectId: dotenv.env['WEB_PROJECT_ID'] ?? '',
-    authDomain: dotenv.env['WEB_AUTH_DOMAIN'] ?? '',
-    databaseURL: dotenv.env['WEB_DATABASE_URL'] ?? '',
-    storageBucket: dotenv.env['WEB_STORAGE_BUCKET'] ?? '',
-    measurementId: dotenv.env['WEB_MEASUREMENT_ID'] ?? '',
+    apiKey: dotenv.get(_firebaseWebApiKey),
+    appId: dotenv.get(_firebaseWebAppId),
+    messagingSenderId: dotenv.get(_firebaseWebMessagingSenderId),
+    projectId: dotenv.get(_firebaseWebProjectId),
+    authDomain: dotenv.get(_firebaseWebAuthDomain),
+    databaseURL: dotenv.get(_firebaseWebDatabaseUrl),
+    storageBucket: dotenv.get(_firebaseWebStorageBucket),
+    measurementId: dotenv.get(_firebaseWebMeasurementId),
   );
 
+  static const firebaseWebConfigs = {
+    _firebaseWebApiKey: String.fromEnvironment(_firebaseWebApiKey),
+    _firebaseWebAppId: String.fromEnvironment(_firebaseWebAppId),
+    _firebaseWebMessagingSenderId:
+        String.fromEnvironment(_firebaseWebMessagingSenderId),
+    _firebaseWebProjectId: String.fromEnvironment(_firebaseWebProjectId),
+    _firebaseWebAuthDomain: String.fromEnvironment(_firebaseWebAuthDomain),
+    _firebaseWebDatabaseUrl: String.fromEnvironment(_firebaseWebDatabaseUrl),
+    _firebaseWebStorageBucket:
+        String.fromEnvironment(_firebaseWebStorageBucket),
+    _firebaseWebMeasurementId:
+        String.fromEnvironment(_firebaseWebMeasurementId),
+  };
+
   static final FirebaseOptions android = FirebaseOptions(
-    apiKey: dotenv.env['ANDROID_API_KEY'] ?? '',
-    appId: dotenv.env['ANDROID_APP_ID'] ?? '',
-    messagingSenderId: dotenv.env['ANDROID_MESSAGING_SENDER_ID'] ?? '',
-    projectId: dotenv.env['ANDROID_PROJECT_ID'] ?? '',
-    databaseURL: dotenv.env['ANDROID_DATABASE_URL'] ?? '',
-    storageBucket: dotenv.env['ANDROID_STORAGE_BUCKET'] ?? '',
+    apiKey: dotenv.get('ANDROID_API_KEY'),
+    appId: dotenv.get('ANDROID_APP_ID'),
+    messagingSenderId: dotenv.get('ANDROID_MESSAGING_SENDER_ID'),
+    projectId: dotenv.get('ANDROID_PROJECT_ID'),
+    databaseURL: dotenv.get('ANDROID_DATABASE_URL'),
+    storageBucket: dotenv.get('ANDROID_STORAGE_BUCKET'),
   );
 
   static final FirebaseOptions ios = FirebaseOptions(
-    apiKey: dotenv.env['IOS_API_KEY'] ?? '',
-    appId: dotenv.env['IOS_APP_ID'] ?? '',
-    messagingSenderId: dotenv.env['IOS_MESSAGING_SENDER_ID'] ?? '',
-    projectId: dotenv.env['IOS_PROJECT_ID'] ?? '',
-    databaseURL: dotenv.env['IOS_DATABASE_URL'] ?? '',
-    storageBucket: dotenv.env['IOS_STORAGE_BUCKET'] ?? '',
-    iosClientId: dotenv.env['IOS_CLIENT_ID'] ?? '',
-    iosBundleId: dotenv.env['IOS_BUNDLE_ID'] ?? '',
+    apiKey: dotenv.get('IOS_API_KEY'),
+    appId: dotenv.get('IOS_APP_ID'),
+    messagingSenderId: dotenv.get('IOS_MESSAGING_SENDER_ID'),
+    projectId: dotenv.get('IOS_PROJECT_ID'),
+    databaseURL: dotenv.get('IOS_DATABASE_URL'),
+    storageBucket: dotenv.get('IOS_STORAGE_BUCKET'),
+    iosClientId: dotenv.get('IOS_CLIENT_ID'),
+    iosBundleId: dotenv.get('IOS_BUNDLE_ID'),
   );
+
+  static const _firebaseWebApiKey = 'WEB_API_KEY';
+  static const _firebaseWebAppId = 'WEB_APP_ID';
+  static const _firebaseWebMessagingSenderId = 'WEB_MESSAGING_SENDER_ID';
+  static const _firebaseWebProjectId = 'WEB_PROJECT_ID';
+  static const _firebaseWebAuthDomain = 'WEB_AUTH_DOMAIN';
+  static const _firebaseWebDatabaseUrl = 'WEB_DATABASE_URL';
+  static const _firebaseWebStorageBucket = 'WEB_STORAGE_BUCKET';
+  static const _firebaseWebMeasurementId = 'WEB_MEASUREMENT_ID';
 }
