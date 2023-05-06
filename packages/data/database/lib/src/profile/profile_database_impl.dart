@@ -16,13 +16,13 @@ class ProfileDatabaseImpl extends ProfileDatabase {
 
   @override
   Profile getProfile() {
-    // TODO: implement getProfile
+    // TODO(eunice-hong): implement getProfile
     throw UnimplementedError();
   }
 
   @override
   void setProfile(Profile profile) {
-    // TODO: implement setProfile
+    // TODO(eunice-hong): implement setProfile
     throw UnimplementedError();
   }
 }

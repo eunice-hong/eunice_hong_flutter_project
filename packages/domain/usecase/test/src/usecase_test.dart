@@ -9,7 +9,7 @@ class _MockProfileRepository extends ProfileRepository {
 
   @override
   Profile getProfile() {
-    // TODO: implement getProfile
+    // TODO(eunice-hong): implement getProfile
     throw UnimplementedError();
   }
 
@@ -20,7 +20,7 @@ class _MockProfileRepository extends ProfileRepository {
 
   @override
   void setProfile(Profile profile) {
-    // TODO: implement setProfile
+    // TODO(eunice-hong): implement setProfile
   }
 
   @override
