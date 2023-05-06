@@ -5,8 +5,7 @@ import 'package:eunice_usecase/usecase.dart';
 class ProfileCubit extends Cubit<bool> {
   ProfileCubit({
     required ProfileRepository profileRepository,
-  })  : assert(profileRepository != null, 'CompanyRepository is null'),
-        _getShowProfileDetail = GetShowProfileDetail(profileRepository),
+  })  : _getShowProfileDetail = GetShowProfileDetail(profileRepository),
         _setShowProfileDetail = SetShowProfileDetail(profileRepository),
         super(false) {
     getProfile();
