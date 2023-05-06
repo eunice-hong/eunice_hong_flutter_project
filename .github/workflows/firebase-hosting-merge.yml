@@ -17,16 +17,16 @@ jobs:
           channel: 'stable'
       - run: flutter --version
       - run: flutter pub get
-      - run: flutter build web --target lib/main_production.dart --web-renderer html \
-        env:
-          WEB_API_KEY: ${{ secrets.WEB_API_KEY }}
-          WEB_APP_ID: ${{ secrets.WEB_APP_ID }}
-          WEB_MESSAGING_SENDER_ID: ${{ secrets.WEB_MESSAGING_SENDER_ID }}
-          WEB_PROJECT_ID: ${{ secrets.WEB_PROJECT_ID }}
-          WEB_AUTH_DOMAIN: ${{ secrets.WEB_AUTH_DOMAIN }}
-          WEB_DATABASE_URL: ${{ secrets.WEB_DATABASE_URL }}
-          WEB_STORAGE_BUCKET: ${{ secrets.WEB_STORAGE_BUCKET }}
-          WEB_MEASUREMENT_ID: ${{ secrets.WEB_MEASUREMENT_ID }}
+      - run: |
+          flutter build web --target lib/main_production.dart --web-renderer html \
+            --dart-define WEB_API_KEY=${{ secrets.WEB_API_KEY }} \
+            --dart-define WEB_APP_ID=${{ secrets.WEB_APP_ID }} \
+            --dart-define WEB_MESSAGING_SENDER_ID=${{ secrets.WEB_MESSAGING_SENDER_ID }} \
+            --dart-define WEB_PROJECT_ID=${{ secrets.WEB_PROJECT_ID }} \
+            --dart-define WEB_AUTH_DOMAIN=${{ secrets.WEB_AUTH_DOMAIN }} \
+            --dart-define WEB_DATABASE_URL=${{ secrets.WEB_DATABASE_URL }} \
+            --dart-define WEB_STORAGE_BUCKET=${{ secrets.WEB_STORAGE_BUCKET }} \
+            --dart-define WEB_MEASUREMENT_ID=${{ secrets.WEB_MEASUREMENT_ID }}
       - name: Archive Production Artifact
         uses: actions/upload-artifact@v3
         with:
