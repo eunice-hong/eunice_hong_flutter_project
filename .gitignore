@@ -124,7 +124,8 @@ app.*.map.json
 !.idea/dictionaries/
 !.idea/runConfigurations/
 
-/assets/env/
+/assets/env/debug.env
+/assets/env/release.env
 
 # Firebase settings
 **/android/**/google-services.json
