@@ -19,13 +19,13 @@ following commands:
 
 ```sh
 # Development
-$ flutter run --flavor development --target lib/main_development.dart
+flutter run --flavor development --target lib/main_development.dart
 
 # Staging
-$ flutter run --flavor staging --target lib/main_staging.dart
+flutter run --flavor staging --target lib/main_staging.dart
 
 # Production
-$ flutter run --flavor production --target lib/main_production.dart
+flutter run --flavor production --target lib/main_production.dart
 ```
 
 _\*Template works on iOS, Android, Web, and Windows._
@@ -37,18 +37,22 @@ _\*Template works on iOS, Android, Web, and Windows._
 To run all unit and widget tests use the following command:
 
 ```sh
-$ flutter test --coverage --test-randomize-ordering-seed random
+flutter test --coverage --test-randomize-ordering-seed random
 ```
 
 To view the generated coverage report you can use [lcov](https://github.com/linux-test-project/lcov)
 .
 
-```sh
-# Generate Coverage Report
-$ genhtml coverage/lcov.info -o coverage/
+Generate Coverage Report
 
-# Open Coverage Report
-$ open coverage/index.html
+```sh
+genhtml coverage/lcov.info -o coverage/
+```
+
+Open Coverage Report
+
+```sh
+open coverage/index.html
 ```
 
 ---
