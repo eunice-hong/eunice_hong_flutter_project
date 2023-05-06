@@ -65,7 +65,7 @@ class ProfileButtonContainer extends StatelessWidget {
         },
       );
     } else {
-      throw 'Could not launch $url';
+      throw Exception('Could not launch $url');
     }
   }
 
