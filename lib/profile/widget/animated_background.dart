@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class AnimatedBackground extends StatefulWidget {
@@ -29,10 +31,12 @@ class AnimatedBackgroundState extends State<AnimatedBackground> {
   Alignment start = alignmentList[0];
   Alignment end = alignmentList[3];
 
+  late Timer backgroundAnimation;
+
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 1), _updateBackground);
     super.initState();
+    backgroundAnimation = Timer(const Duration(seconds: 1), _updateBackground);
   }
 
   @override
@@ -51,6 +55,12 @@ class AnimatedBackgroundState extends State<AnimatedBackground> {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    backgroundAnimation.cancel();
+    super.dispose();
   }
 
   void _updateBackground() {
