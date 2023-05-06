@@ -15,13 +15,13 @@ class AppTheme {
 
   static TextTheme get _textTheme {
     return GoogleFonts.fugazOneTextTheme(
-      TextTheme(
-        headline1: AppTextStyle.headline1,
-        headline2: AppTextStyle.headline2,
-        headline3: AppTextStyle.headline3,
-        headline4: AppTextStyle.headline4,
-        headline5: AppTextStyle.headline5,
-        subtitle1: AppTextStyle.subtitle1,
+      const TextTheme(
+        displayLarge: AppTextStyle.displayLarge,
+        displayMedium: AppTextStyle.displayMedium,
+        displaySmall: AppTextStyle.displaySmall,
+        headlineMedium: AppTextStyle.headlineMedium,
+        headlineSmall: AppTextStyle.headlineSmall,
+        titleMedium: AppTextStyle.titleMedium,
       ),
     );
   }
