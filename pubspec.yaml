@@ -22,7 +22,7 @@ dependencies:
   eunice_usecase:
     path: packages/domain/usecase
   firebase_analytics: 10.0.4
-  firebase_core: 2.7.0
+  firebase_core: 2.17.0
   firebase_crashlytics: ^3.0.4
   flutter:
     sdk: flutter
