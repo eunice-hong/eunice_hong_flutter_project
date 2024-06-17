@@ -15,9 +15,9 @@ class ProfileScreen extends StatelessWidget {
       create: (_) => ProfileCubit(
         profileRepository: GetIt.I<ProfileRepository>(),
       ),
-      child: Scaffold(
+      child: const Scaffold(
         body: Stack(
-          children: const [
+          children: [
             Positioned(
               top: 0,
               left: 0,
