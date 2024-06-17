@@ -11,7 +11,7 @@ dependencies:
     path: ../datasource
   flutter:
     sdk: flutter
-  get_it: 7.2.0
+  get_it: ^7.6.7
   shared_preferences: 2.2.2
 
 dev_dependencies:

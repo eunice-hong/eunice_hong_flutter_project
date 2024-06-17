@@ -11,6 +11,6 @@ dependencies:
     path: ../entity
 
 dev_dependencies:
-  mocktail: 1.0.1
-  test: 1.19.2
+  mocktail: ^1.0.4
+  test: ^1.25.5
   very_good_analysis: 5.1.0
