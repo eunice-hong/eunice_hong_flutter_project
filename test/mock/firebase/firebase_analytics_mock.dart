@@ -12,7 +12,7 @@ final List<MethodCall> methodCallLog = <MethodCall>[];
 /// by [Firebase.initializeApp].
 void setupFirebaseAnalyticsMocks([Callback? customHandlers]) {
   setupFirebaseCoreMocks();
-  TestDefaultBinaryMessengerBinding.instance?.defaultBinaryMessenger
+  TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
       .setMockMethodCallHandler(MethodChannelFirebaseAnalytics.channel,
           (MethodCall methodCall) async {
     methodCallLog.add(methodCall);
